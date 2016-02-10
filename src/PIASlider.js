@@ -304,8 +304,10 @@ var PIASlider = (function(){
      * Handler para pulsación en control de slider.
      */
     var controlClick = function(ev){
+      ev.preventDefault();
       var index = $(this).data('index');
       gotoSlide(index);
+      return false;
      };
 
     /**
