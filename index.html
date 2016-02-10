@@ -1,61 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>PIASlider demo</title>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-  <link rel="stylesheet" type="text/css" href="lib/PIASlider.css">
-  <style type="text/css">
+  <head>
+    <meta charset="UTF-8">
+    <title>PIASlider demo</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" type="text/css" href="lib/PIASlider.css">
+    <style type="text/css">
   body, html {
     min-height: 100%;
+    font-family: "Droid Sans", Helvetica, Arial, sans-serif;
   }
 
-  .layout {
+  .col {
     max-width: 980px;
     margin: 0 auto;
   }
 
-  h1 {
-    font-weight: normal;
+  .main-header {
+    background: #333;
+    color: white;
+      text-align: center;
   }
-  </style>
-</head>
-<body>
-  <div class="layout">
-  <h1>PIASlider - demo</h1>
-  <div class="slider-container" id="demoSlider">
-    <div class="slider">
-      <div class="slide active" style="background: #57385C; color: white;">
-      <h2>
-        Slide 1
-      </h2>
-      </div>
-      <div class="slide inactive" style="background: #A75265; color: white;">
-      <h2>
-        Slide 2
-      </h2>
-      </div>
-      <div class="slide inactive" style="background: #EC7263; color: white;">
-        <h2>
-          Slide 3
-        </h2>
-      </div>
-      <div class="slide inactive" style="background: #FEBE7E; color: #555;">
-        <h2>
-          Slide 4
-        </h2>
+
+  .content {
+    background: #EEE;
+  }
+
+  h1 {
+    padding: 0.5em 0;
+    margin: 0;
+    font-weight: normal;
+    border: #EEE 1px solid;
+      border-width: 0 1px 0 1px;
+  }
+
+  .slide .slide-title {
+    background: transparent;
+    text-shadow: 1px 1px 3px #999;
+    text-align: center;
+      font-size: 3em;
+  }
+
+  .slider-controls .slider-control-item {
+    box-shadow: 1px 1px 3px #999;
+  }
+
+  .slider-control-item.active {
+    background: orangered;
+  }
+
+  .slider-container {
+    max-width: 980px;
+  }
+
+  .slide.brown {
+    background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/wov.png);
+  }
+
+  .slide.paper {
+    background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/eight_horns.png");
+  }
+
+  .slide.dark {
+    background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/dark_embroidery.png");
+  }
+
+  .slide.swirl {
+    background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/swirl_pattern.png");
+  }
+    </style>
+  </head>
+  <body>
+    <div class="row main-header">
+      <div class="col">
+        <h1>PIASlider</h1>
       </div>
     </div>
-  </div>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.js"></script>
-  <script src="lib/PIASlider.js"></script>
-  <script type="text/javascript">
-  $(function(){
-    var demoSlider = PIASlider.create('#demoSlider', { buildControls: true, animType: "random" });
-  });
-  </script>
+    <div class="row content">
+      <div class="col">
+        <div class="slider-container" id="demoSlider">
+          <div class="slider">
+            <div class="slide active brown">
+              <div class="slide-title">
+              <h2>
+                Slide 1
+              </h2>
+              </div>
+            </div>
+            <div class="slide inactive dark">
+              <div class="slide-title">
+              <h2>
+                Slide 2
+              </h2>
+              </div>
+            </div>
+            <div class="slide inactive paper">
+              <div class="slide-title">
+              <h2>
+                Slide 3
+              </h2>
+              </div>
+            </div>
+            <div class="slide inactive swirl">
+              <div class="slide-title">
+              <h2>
+                Slide 4
+              </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
 
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.js"></script>
+    <script src="lib/PIASlider.js"></script>
+    <script type="text/javascript">
+$(function(){
+  var demoSlider = PIASlider.create('#demoSlider', { buildControls: true, animType: "random", animTime: 1000, slideTime: 3000 });
+});
+    </script>
+
+  </body>
 </html>
