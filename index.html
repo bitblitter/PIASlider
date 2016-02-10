@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PIASlider demo</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+  <link rel="stylesheet" type="text/css" href="PIASlider.css">
+  <style type="text/css">
+  body, html {
+    min-height: 100%;
+  }
+  </style>
+</head>
+<body>
+  <h1>PIASlider - demo</h1>
+  <div class="slider-container" id="demoSlider">
+    <div class="slider">
+      <div class="slide active" style="background: #57385C; color: white;">
+      <h2>
+        Slide 1
+      </h2>
+      </div>
+      <div class="slide inactive" style="background: #A75265; color: white;">
+      <h2>
+        Slide 2
+      </h2>
+      </div>
+      <div class="slide inactive" style="background: #EC7263; color: white;">
+        <h2>
+          Slide 3
+        </h2>
+      </div>
+      <div class="slide inactive" style="background: #FEBE7E; color: #555;">
+        <h2>
+          Slide 4
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.js"></script>
+  <script src="PIASlider.js"></script>
+  <script type="text/javascript">
+  $(function(){
+    var demoSlider = PIASlider.create('#demoSlider', { buildControls: true, animType: "random" });
+  });
+  </script>
+
+</body>
+</html>
